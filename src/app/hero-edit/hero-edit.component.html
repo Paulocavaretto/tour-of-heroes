@@ -1,0 +1,42 @@
+<div *ngIf="hero">
+  <mat-card-title class="title">{{hero.name | uppercase}} - ID: {{hero.id}}</mat-card-title>
+<div class="example-form">
+  <mat-form-field class="full-width">
+    <mat-label>Hero name: </mat-label>
+    <input matInput placeholder="Hero name" [(ngModel)]="hero.name">
+  </mat-form-field>
+</div>
+  <br>
+  <div class="example-form">
+  <mat-form-field class="full-width">
+    <mat-label>Hero Description:</mat-label>
+    <input matInput placeholder="Hero Description" [(ngModel)]="hero.description">
+  </mat-form-field>
+  </div>
+  <br>
+  <div class="example-form">
+  <mat-form-field class="full-width">
+    <mat-label>Hero image url: </mat-label>
+    <input matInput placeholder="Hero image url" [(ngModel)]="hero.imageUrl">
+  </mat-form-field>
+</div>
+  <br>
+<div class="example-form">
+  <mat-form-field class="example-form">
+    <mat-label>Hero universe</mat-label>
+    <mat-select [(ngModel)]="hero.universe">
+      <mat-option *ngFor="let universe of heroUniverses" [value]="universe">
+        {{universe | uppercase}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+  <br>
+<section>
+  <div class="example-label"></div>
+  <div class="example-button-row">
+    <button mat-raised-button (click)= "goBack()" >go back</button>
+    <button mat-raised-button color="primary"(click)="save()">save</button>
+  </div>
+</section>
+</div>
